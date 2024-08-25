@@ -1,26 +1,216 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* General*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 :root{
-    --primer-color:#070709;
+    /*Colors*/
+    --moss-green: #EAEFDE;
+    --onyx:#3F3F40;
+    --black:#000000;
+    --orange: #fb8500;
     --segundo-color:#10fee2;
-    --tercer-color:#f6f6f6;
+    --tercer-color:#000000;
     --cuarto-color:#2a95bf;
     --color-opcional-1:#f6f6f618;
     --color-transparente:transparent;
-    --size-extra-grande:3rem;
-    --size-grande:2rem;
-    --size-mediano:1.5rem;
-    --size-chico:1rem;
-    --size-extra-chico:0.75rem;
+    --size-xlarge:3rem;
+    --size-large:2rem;
+    --size-medium:1.5rem;
+    --size-small:1rem;
+    --size-xsmall:0.75rem;    
     --font-family:"Inter", sans-serif;
 }
 
+.GeneralBody{
+    background-size: cover;       
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--moss-green);
+    font-family: var(--font-family);
+}
 
+@media (max-width: 425px) {
+    /*Head Section*/
+    .RootHeader{
+        height: 60px;
+        /* flex-grow: 1; */
+    }
+
+    .LogoHeader{
+        max-height: 30px;
+    }
+
+    /*Main Section*/
+
+    .RootMain {
+        gap: 40px;
+    }
+
+    /*Input Text*/
+    .Buttons {
+        max-height: none;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .EncriptButton, .DecryptButton {
+        padding: var(--size-small) 0;
+    }
+}
+
+/*Input Text Area*/
+.SecInputText{
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-color: transparent;
+    max-width: 680px;
+    max-height: 944px;
+    padding:0 0 2% 0;
+}
+
+.TextArea-InputText{
+    background-color: transparent;
+    width: 100%;
+    max-height: 300px;
+    font-family:var(--font-family) ;
+    font-size: var(--size-large);
+    outline: none;
+    resize: none;
+    border: none;
+    color: var(--black);
+}
+
+.div-InputText-Reglas1{
+    display: flex;
+}
+
+.Alert-Icon{
+    font-weight: bold;
+    color: var(--orange);
+}
+
+.div-InputText {
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.div-InputText-Reglas2 {
+   
+    font-size: var(--size-xsmall);
+    display: flex;
+    align-items: center;
+    color: var(--black);
+}
+
+.Buttons {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    max-height: 67px;
+    
+}
+
+.EncriptButton {
+    flex: 1;
+    padding: var(--size-medium ) 0;
+    border-radius: 24px;
+    border: 1px solid var(--segundo-color);
+    background-color: transparent;
+    color: var(--tercer-color);
+    font-size: var(--size-small);
+}
+
+.EncriptButton {
+    /* background-color: var(--cuarto-color); */
+    color: var(--segundo-color);
+    outline: 1px solid var(--tercer-color);
+}
+
+.DecryptButton {
+    flex: 1;
+    font-size: var(--size-small);
+    padding: var(--size-medium ) 0;
+    border-radius: 24px;
+    border: 1px solid var(--segundo-color);
+    background-color: transparent;
+    color: var(--tercer-color);
+}
+
+.DecryptButton:hover {
+    /* background-color:var(--cuarto-color); */
+    color: var(--segundo-color);
+    outline: 1px solid var(--tercer-color);
+}
+
+/*Output Text Area*/
+.main-sec2{
+   
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+    background-color: var(--color-opcional-1);
+    background-color:var(--onyx);
+    max-width:400px ; 
+    max-height: 944px;
+    padding: 2%;
+    border-radius: 32px;
+    box-shadow: 0 0px 15px 0 var(--segundo-color), 0 0px 15px 0 var(--tercer-color);
+    /* box-shadow: 0 8px 15px 0 var(--segundo-color), 0 6px 10px 0 var(--tercer-color); */
+}
+
+.sec2-salida-tex{
+    display: block;
+    background-image: url(../images/escudo-verde-agua.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: var(--color-transparente);
+    width: 100%;
+    max-height: 350px;
+    font-family: var(--font-family);
+    font-size: var(--size-medium);
+    outline: none;
+    resize: none;
+    border: none;
+    color:var(--tercer-color);
+}
 
 /*Footer*/
 
+.RootFooter{
+    padding: 1%;
+    gap: 6px;
+    display: flex;
+    flex-direction: column;
+    /* flex-grow: 1;  */
+    align-items: center;
+    background-color: var(--moss-green);
+}
+
+.divFooter{    
+    display: flex;
+    gap: 10px;
+}
+
 .TextFooter{
-    color: var(--tercer-color);
-    font-size:var(--size-extra-chico) ;
-    text-align: center
+    color: var(--onyx);
+    font-size:var(--size-xsmall);
+    font-weight: bold;    
+}
+
+.IconFooter{
+    color:var(--onyx); 
+    
 }

@@ -1,29 +1,49 @@
 <!doctype html>
-<html lang="es-ES">
+<html lang="en-es" class="translated-ltr">
     <head>
-        <meta charset="utf-8" />
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Encriptador de Texto</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <link rel="stylesheet" href="./styles/basic-style.css">
-            
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">        
+        <link rel="stylesheet" href="./styles/basic-style.css">            
     </head>
-    <body>
-        <header>
-            <div class="header">
-                <img src="./images/Logo.png" alt="logo de KoyoDev" class="ImagenLogo">
-            </div>
+    <body class="GeneralBody">
+        <header class="RootHeader">            
+                <img class="LogoHeader" src="./images/Logo.png" alt="logo de Personal">         
         </header>
-        <main>
+        <main class="RootMain">
+            <section class="SecInputText">
+                <textarea class="TextArea-InputText" cols="30" rows="10" 
+                placeholder="Ingrese el texto aqui"
+                ></textarea>
+                <div class="div-InputText">
+                    <div class="div-InputText-Reglas1">
+                        <p class="div-InputText-Reglas2"> 
+                            <i class="Alert-Icon">&#xf06a; </i> 
+                            Solo letras minúsculas, sin acentos o caracteres especiales.
+                        </p>
+                    </div>
+                    <div class="Buttons">
+                        <button class="EncriptButton">Encriptar</button>
+                        <button class="DecryptButton">Desencriptar</button>
+                    </div>
+                </div>
+            </section>
 
+            <!-- <section class="main-sec2">
+                <textarea class="sec2-salida-tex" cols="20" rows="10"></textarea> -->
+
+            </section>
         </main>
-        <footer class="footer">
-            <div class="div-footer">
-                <a class="enlace-footer" href="https://www.linkedin.com/in/jcamilohernandez"><i class="bi bi-linkedin"></i></a>
-                <a class="enlace-footer" href="https://github.com/imkoyodev"><i class="bi bi-github"></i></a>
+        
+        <footer class="RootFooter">
+            <div class="divFooter">
+                <p class="TextFooter">&#x1f16d; 2024 Camilo Hernandez</p>
+                <a class="IconFooter" href="https://www.linkedin.com/in/jcamilohernandez"><i class="bi bi-linkedin"></i></a>
+                <a class="IconFooter" href="https://github.com/imkoyodev"><i class="bi bi-github"></i></a>
             </div>
-            <p class="TextFooter">&#x1f16d; 2024 Camilo Hernandez</p> 
+            
         </footer>
     <script src="./scripts/basic-app.js"></script>
     </body>
