@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --primer-color:#070709;
+    --segundo-color:#10fee2;
+    --tercer-color:#f6f6f6;
+    --cuarto-color:#2a95bf;
+    --color-opcional-1:#f6f6f618;
+    --color-transparente:transparent;
+    --size-extra-grande:3rem;
+    --size-grande:2rem;
+    --size-mediano:1.5rem;
+    --size-chico:1rem;
+    --size-extra-chico:0.75rem;
+    --font-family:"Inter", sans-serif;
+}
+
+
+
+/*Footer*/
+
+.TextFooter{
+    color: var(--tercer-color);
+    font-size:var(--size-extra-chico) ;
+    text-align: center
+}
