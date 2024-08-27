@@ -1,6 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* General*/
+:root{    
+    --color-background:#FBFCF9;
+    --color-shadow:#848A6D;
+    --color-text:#454443;
+    --color-orange: #ED7F10;   
+    --color-opcional-1:#f6f6f618;
+    --color-transparente:transparent;
+    --size-xlarge:3rem;
+    --size-large:2rem;
+    --size-medium:1.5rem;
+    --size-small:1rem;
+    --size-xsmall:0.75rem;
+    --font-family:"Inter", sans-serif;
+}
 
 *{
     padding: 0;
@@ -8,77 +21,59 @@
     box-sizing: border-box;
 }
 
-:root{
-    /*Colors*/
-    --moss-green: #EAEFDE;
-    --onyx:#3F3F40;
-    --black:#000000;
-    --orange: #fb8500;
-    --segundo-color:#10fee2;
-    --tercer-color:#000000;
-    --cuarto-color:#2a95bf;
-    --color-opcional-1:#f6f6f618;
-    --color-transparente:transparent;
-    --size-xlarge:3rem;
-    --size-large:2rem;
-    --size-medium:1.5rem;
-    --size-small:1rem;
-    --size-xsmall:0.75rem;    
-    --font-family:"Inter", sans-serif;
-}
-
-.GeneralBody{
-    background-size: cover;       
+.body{
+        
+    background-size: cover;
+    background-position:center ;
+    background-repeat: no-repeat;       
     display:flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: var(--moss-green);
+    background-color: var(--color-background);
     font-family: var(--font-family);
 }
-
-@media (max-width: 425px) {
-    /*Head Section*/
-    .RootHeader{
-        height: 60px;
-        /* flex-grow: 1; */
-    }
-
-    .LogoHeader{
-        max-height: 30px;
-    }
-
-    /*Main Section*/
-
-    .RootMain {
-        gap: 40px;
-    }
-
-    /*Input Text*/
-    .Buttons {
-        max-height: none;
-        flex-direction: column;
-        gap: 18px;
-    }
-
-    .EncriptButton, .DecryptButton {
-        padding: var(--size-small) 0;
-    }
+/*------------------------------ ENCABEZADO ---------*/
+.header{    
+    
+    display: flex;
+    align-items: center;
+    padding: 1%;
+    background-color: var(--color-background);
 }
 
-/*Input Text Area*/
-.SecInputText{
+.header-logo{
+    
+}
+
+/*------------------------------ PRINCIPAL ---------*/
+
+.RootMain{
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 80px;
+    padding: 1%;
+}
+
+/*--------------------------------- SECCION 1 --------------------------------------*/
+
+.MainInput{
 
     display: flex;
     flex-direction: column;
+    
     justify-content: flex-end;
-    background-color: transparent;
+    
+    /* background-color: transparent; */
     max-width: 680px;
     max-height: 944px;
     padding:0 0 2% 0;
 }
 
-.TextArea-InputText{
+/*------------------------------ ENTRADA AREA DE TEXTO ---------*/
+.InputTextArea{
     background-color: transparent;
+    
     width: 100%;
     max-height: 300px;
     font-family:var(--font-family) ;
@@ -86,34 +81,41 @@
     outline: none;
     resize: none;
     border: none;
-    color: var(--black);
+    color: var(--color-text);
 }
 
-.div-InputText-Reglas1{
-    display: flex;
+.InputTextArea::placeholder {
+    color: var(--color-text);
 }
 
-.Alert-Icon{
-    font-weight: bold;
-    color: var(--orange);
-}
-
-.div-InputText {
+.InputDivAreaButtons{
     gap: 16px;
     display: flex;
     flex-direction: column;
 
 }
 
-.div-InputText-Reglas2 {
+.InputWarningDiv{
+    display: flex;
+} 
+
+
+.InputWarningTextDiv{
    
     font-size: var(--size-xsmall);
     display: flex;
     align-items: center;
-    color: var(--black);
+    color: var(--color-text);
+    
 }
 
-.Buttons {
+.material-icons {
+    color: var(--color-orange);
+}
+
+/*------------------------------ BOTONES SECCION 1 (ENCRIPTADO, DESENCRIPTADO)--------------------------------------*/
+
+.InputDivButtons{    
     display: flex;
     justify-content: center;
     gap: 24px;
@@ -121,58 +123,64 @@
     
 }
 
-.EncriptButton {
+.DivEncryptButton{
+    
     flex: 1;
-    padding: var(--size-medium ) 0;
+    padding: var(--size-medium) 0;
     border-radius: 24px;
-    border: 1px solid var(--segundo-color);
+    border: 1px solid var(--color-shadow);
     background-color: transparent;
-    color: var(--tercer-color);
+    color: var(--color-text);
     font-size: var(--size-small);
 }
 
-.EncriptButton {
-    /* background-color: var(--cuarto-color); */
-    color: var(--segundo-color);
-    outline: 1px solid var(--tercer-color);
+.DivEncryptButton:hover{
+    
+    color: var(--color-shadow);
+    outline: 1px solid var(--color-text);
 }
 
-.DecryptButton {
+.DivDecryptButton{
     flex: 1;
     font-size: var(--size-small);
-    padding: var(--size-medium ) 0;
+    padding: var(--size-medium) 0;
     border-radius: 24px;
-    border: 1px solid var(--segundo-color);
+    border: 1px solid var(--color-shadow);
     background-color: transparent;
-    color: var(--tercer-color);
+    color: var(--color-text);
+    
 }
 
-.DecryptButton:hover {
-    /* background-color:var(--cuarto-color); */
-    color: var(--segundo-color);
-    outline: 1px solid var(--tercer-color);
+.DivDecryptButton:hover{
+    
+    color: var(--color-shadow);
+    outline: 1px solid var(--color-text);
 }
 
-/*Output Text Area*/
-.main-sec2{
+/*------------------------------ SECCION 2 --------------------------------------*/
+
+.MainOutput{
    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 16px;
     background-color: var(--color-opcional-1);
-    background-color:var(--onyx);
+    
     max-width:400px ; 
     max-height: 944px;
     padding: 2%;
     border-radius: 32px;
-    box-shadow: 0 0px 15px 0 var(--segundo-color), 0 0px 15px 0 var(--tercer-color);
-    /* box-shadow: 0 8px 15px 0 var(--segundo-color), 0 6px 10px 0 var(--tercer-color); */
+    box-shadow: 0 0px 15px 0 var(--color-shadow), 0 0px 15px 0 var(--color-text);
+    /* box-shadow: 0 8px 15px 0 var(--color-shadow), 0 6px 10px 0 var(--color-text); */
 }
 
-.sec2-salida-tex{
+/*--------------------------------- SALIDA DE AREA TEXTO --------------------------------------*/
+
+.OutputTextArea{
+    
     display: block;
-    background-image: url(../images/escudo-verde-agua.png);
+    background-image: url(../images/People.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -184,10 +192,54 @@
     outline: none;
     resize: none;
     border: none;
-    color:var(--tercer-color);
+    color:var(--color-text);
 }
 
-/*Footer*/
+.OutputDivTextArea{
+    max-width: 336px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    color:var(--color-text);
+}
+
+.OutputTextTitle{
+    text-align: center;
+    font-size: var(--size-medium);
+}
+
+.OutputTextTitleMsg{
+    text-align: center;
+    font-size: var(--size-small);
+}
+
+/*------------------------------ BOTON SECCION 2 (COPIAR) --------------------------------------*/
+
+.OutputDivButton{
+    display: flex;
+    justify-content: center;
+}
+
+.CopyDivButton{
+    display: none;
+    max-height: 67px;
+    width: 336px;
+    flex: 1;
+    font-size: var(--size-small);
+    padding: var(--size-medium) 0;
+    border-radius: 24px;
+    border: 1px solid var(--color-shadow);
+    background-color: var(--color-transparente);
+    color: var(--color-text);
+}
+
+.CopyDivButton:hover{
+    /* background-color:var(--cuarto-color); */
+    color: var(--color-shadow);
+    outline: 1px solid var(--color-text);
+}
+
+/*------------------------------ PIE DE PAGINA --------------------------------------*/
 
 .RootFooter{
     padding: 1%;
@@ -196,21 +248,120 @@
     flex-direction: column;
     /* flex-grow: 1;  */
     align-items: center;
-    background-color: var(--moss-green);
+    background-color: var(--color-background);
 }
 
-.divFooter{    
-    display: flex;
-    gap: 10px;
+.DivFooter{
+    
+   display: flex;
+   gap: 10px;
+  
+}
+
+.LinkFooter{
+    color:var(--color-text); 
+    
+}
+
+.LinkFooter:hover{
+    color: var(--color-background);
 }
 
 .TextFooter{
-    color: var(--onyx);
-    font-size:var(--size-xsmall);
-    font-weight: bold;    
+    color: var(--color-text);
+    font-size:var(--size-xsmall) ;
 }
 
-.IconFooter{
-    color:var(--onyx); 
-    
+@media (max-width: 768px) {
+    .header {
+        flex-grow: 0;
+    }
+
+    .RootMain {
+        max-height: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 64px;
+    }
+
+    .MainInput {
+        width: 100%;
+        max-width: none;
+        max-height: none;
+        padding: 0;
+        display: inline;
+    }
+
+    .InputTextArea {
+        max-height: 210px;
+    }
+
+    .MainOutput {
+        display: inline;
+        width: 100%;
+        max-width: none;
+        max-height: 100%;
+        box-shadow: none;
+    }
+
+    .OutputTextArea {
+        display: none;
+        background-image: none;
+        max-height: 200px;
+    }
+
+    .OutputDivTextArea{
+        max-width: none;
+    }
+
+    .CopyDivButton {
+        display: none;
+    }
+
+    .RootFoote{
+        flex-grow: 0;
+    }
+}
+
+@media (max-width: 425px) {
+    .header{
+        height: 60px;
+        /* flex-grow: 1; */
+    }
+
+    .header-logo{
+        max-height: 30px;
+    }
+
+    .RootMain {
+        gap: 40px;
+    }
+
+    .InputTextArea {
+        max-height: 170px;
+    }
+
+    .OutputTextArea {
+        max-height: 175px;
+    }
+
+    .InputDivButtons {
+        max-height: none;
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .DivEncryptButton, .DivDecryptButton {
+        padding: var(--size-small) 0;
+    }
+    .RootFooter{
+        gap: 0; 
+        padding: 0;
+        font-weight: bold;
+    }
+
+    .TextFooter{
+        text-align: center;
+        font-weight: bold;
+    }
 }
