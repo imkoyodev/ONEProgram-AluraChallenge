@@ -54,25 +54,18 @@ function Encrypt(UserInput) {
 }
 
 function Decrypt(UserInput) {
-
-    let TextArray = [["ai","a"],["enter","e"],["imes","i"],["ober","o"],["ufat", "u"]];
-    
+    let TextArray = [["ai","a"],["enter","e"],["imes","i"],["ober","o"],["ufat", "u"]];    
     for (let i = 0; i < TextArray.length; i++) {
         if (UserInput.includes(TextArray[i][0])) {
             UserInput = UserInput.replaceAll(TextArray[i][0],TextArray[i][1]);
-        }
-        
+        }        
     }
-
     return UserInput;
 }
 
 function EventEncryptButton() {
-
     let UserInput = InputText.value;
-
     const ErrorMsg = CheckText(UserInput);
-
     if (ErrorMsg) {
         OutputText.textContent = ErrorMsg;
         OutputText.style.backgroundImage = "none";
@@ -82,15 +75,12 @@ function EventEncryptButton() {
         CopyButton.textContent = "OK";
         CopyButton.removeEventListener('click',EventCopyButton);
         CopyButton.addEventListener('click',EventNoticeButton);
-
         return;
     }
 
     let Encrypted = Encrypt(UserInput);    
     OutputText.textContent = Encrypted;
-
-     InputText.value = ""; 
-
+    InputText.value = ""; 
     OutputText.style.backgroundImage = "none";
     OutputText.style.display = "block";
     DivOutputText.style.display = "none";
@@ -114,12 +104,10 @@ async function CopyText(UserInput) {
     let If_CopyOk = false;
     try {
         await navigator.clipboard.writeText(UserInput);
-        If_CopyOk = true;
-       
+        If_CopyOk = true;       
     } catch (error) {
         console.error(error.message);
-    }
-   
+    }   
     if (If_CopyOk) {
         window.location.href = window.location.href;
     }
@@ -133,8 +121,7 @@ function EventCopyButton() {
 
 function EventNoticeButton() {
     location.reload();
-}
-  
+}  
 
    EncryptButton.addEventListener('click', EventEncryptButton);
    DecryptButton.addEventListener('click', EventDecryptButton);
