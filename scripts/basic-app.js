@@ -1,12 +1,9 @@
 const InputText = document.querySelector(".InputTextArea");
 const OutputText = document.querySelector(".OutputTextArea");
-
 const DivOutputText = document.querySelector(".OutputDivTextArea");
-
 const EncryptButton = document.querySelector(".DivEncryptButton");
 const DecryptButton = document.querySelector(".DivDecryptButton");
 const CopyButton = document.querySelector(".CopyDivButton");
-
 
 function CheckText(UserInput) {
     const HasCaps = /[A-Z]/.test(UserInput);
